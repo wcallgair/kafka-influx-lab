@@ -1,3 +1,0 @@
-http://localhost:3000/connections/datasources/edit/feam1c9s0svswf
-http://influxdb-lab.default:8086
-kubectl -i -t exec influxdb-lab-0 -- sh

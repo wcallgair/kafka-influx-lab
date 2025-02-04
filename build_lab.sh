@@ -20,11 +20,20 @@ helm install -f grafana.yaml grafana-lab grafana/grafana > /dev/null
 echo "Install influxdb-lab chart..."
 helm install -f influxdb.yaml influxdb-lab influxdata/influxdb > /dev/null
 
-echo "Install telegraf-lab chart..."
-helm install -f telegraf.yaml telegraf-lab influxdata/telegraf > /dev/null
-
 echo "Install kafka-lab chart..."
 helm install -f kafka.yaml kafka-lab kafka/kafka > /dev/null
+
+echo "adding repos.."
+helm repo add influxdata https://helm.influxdata.com/
+
+echo "Install telegraf-client chart..."
+helm install -f telegraf-client.yaml telegraf-client-lab influxdata/telegraf > /dev/null
+
+echo "Install telegraf-read chart..."
+helm install -f telegraf-read.yaml telegraf-read-lab influxdata/telegraf > /dev/null
+
+echo "Install telegraf-write chart..."
+helm install -f telegraf-write.yaml telegraf-write-lab influxdata/telegraf > /dev/null
 
 
 echo "Create screen sessnions..."

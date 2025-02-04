@@ -233,7 +233,11 @@ initScripts:
   enabled: true
   scripts:
     init.iql: |+
-      CREATE DATABASE "telegraf" WITH DURATION 30d REPLICATION 1 NAME "rp_30d"
+      CREATE DATABASE "telegraf" WITH DURATION 30d REPLICATION 1 NAME "rp_30d" 
+    init.iql: |+
+      CREATE DATABASE "db-1" WITH DURATION 30d REPLICATION 1 NAME "rp_30d"
+    init.iql: |+
+      CREATE DATABASE "db-2" WITH DURATION 30d REPLICATION 1 NAME "rp_30d"
 
 backup:
   enabled: false
